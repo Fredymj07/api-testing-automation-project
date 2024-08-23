@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite de pruebas de Api Pública" thread-count="7" parallel="tests">
+
+    <test name="Test GetSingleObjectTest with Status Code 200">
+        <parameter name="id" value="7"/>
+        <parameter name="expectedStatusCode" value="200"/>
+        <classes>
+            <class name="tests.publicApi.GetSingleObjectTest"></class>
+        </classes>
+    </test>
+
+    <test name="Test GetSingleObjectTest with Status Code 404">
+        <parameter name="id" value="ff"/>
+        <parameter name="expectedStatusCode" value="404"/>
+        <classes>
+            <class name="tests.publicApi.GetSingleObjectTest"></class>
+        </classes>
+    </test>
+
+    <test name="Test GetMultipleObjectsTest">
+        <parameter name="id" value="4"/>
+        <parameter name="id" value="13"/>
+        <classes>
+            <class name="tests.publicApi.GetMultipleObjectsTest"></class>
+        </classes>
+    </test>
+
+    <test name="Test CreateObjectTest">
+        <classes>
+            <class name="tests.publicApi.CreateObjectTest"></class>
+        </classes>
+    </test>
+
+</suite>
